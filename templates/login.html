@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome</h1><br>
+    <p class="text-center text-muted">Hello, friend. This web app allows you to "buy" and "sell" stocks by querying IEX for stocks' prices. You start with $10,000.00 and can add more later if you'd like. This app is part of CS50x course, if you would like to find out more about the course <a href="https://cs50.harvard.edu/x/2020/">click here.</a> If you're here, chances are I asked you to test this web app. Go wild and I appreciate any feedback. Thank you. - Arya</p><br>
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}

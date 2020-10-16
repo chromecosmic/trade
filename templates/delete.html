@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Account
+{% endblock %}
+
+{% block main %}
+    <p>Are you sure? All of your transactions will be deleted.</p>
+    <form action="/delete" method="post">
+        <button class="btn btn-primary" name="confirm" type="submit" value="yes">Yes</button>
+        <button class="btn btn-primary" name="confirm" type="submit" value="no">No</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stock_symbol %}
+            {% set item_1 = stock_symbol[loop.index-1] %}
+            {% set item_2 = stock_name[loop.index-1] %}
+            {% set item_3 = shares_owned[loop.index-1] %}
+            {% set item_4 = stock_price[loop.index-1] %}
+            {% set item_5 = total[loop.index-1] %}
+            <tr>
+                <td>{{ item_1 }}</td>
+                <td>{{ item_2 }}</td>
+                <td>{{ item_3 }}</td>
+                <td>{{ item_4 }}</td>
+                <td>{{ item_5 }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="font-weight: bold;">{{ gross }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

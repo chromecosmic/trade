@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted (GMT)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stock_symbol %}
+            {% set item_1 = stock_symbol[loop.index-1] %}
+            {% set item_2 = shares_transacted[loop.index-1] %}
+            {% set item_3 = stock_price[loop.index-1] %}
+            {% set item_4 = timestamp[loop.index-1] %}
+            <tr>
+                <td>{{ item_1 }}</td>
+                <td>{{ item_2 }}</td>
+                <td>{{ item_3 }}</td>
+                <td>{{ item_4 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
